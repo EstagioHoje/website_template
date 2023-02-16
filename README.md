@@ -1,5 +1,6 @@
 ![Badge](https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT)
 ![Badge](https://img.shields.io/static/v1?label=typescript&message=language&color=red&style=for-the-badge&logo=TYPESCRIPT)
+![Badge](https://img.shields.io/static/v1?label=docker&message=virtualization&color=red&style=for-the-badge&logo=DOCKER)
 ![Badge](https://img.shields.io/static/v1?label=MIT&message=LICENSE&color=yellow&style=for-the-badge)
 
 # Estágio Hoje
