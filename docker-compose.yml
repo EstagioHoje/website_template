@@ -7,6 +7,7 @@ services:
     ports:
       - 1234:1234
     restart: unless-stopped
+    tty: true
     volumes:
-      - ./usr/src/app/
-      # - ./usr/src/app/node_modules
+      - ./src:/usr/src/app/src
+      - ./src/yarn.lock:/usr/src/app/src/yarn.lock
