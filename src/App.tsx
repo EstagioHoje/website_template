@@ -1,43 +1,51 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import React,{useEffect, useState} from "react";
 import axios from 'axios';
 
-//import { ExamplePage } from "./pages/example_page";
 import Counter from "./Counter";
 import { exemplo_get } from "./actions/exemplo";
 import { endpoints } from "./actions/server_core/endpoint";
-import { api_links } from "./actions/server_core/endpoint";
-import { headers } from "./actions/server_core/endpoint";
+//import { api_links } from "./endpoint";
+//import { headers } from "./actions/server_core/endpoint";
 import { ApiGet } from "./actions/server_core/api_get";
 
+const headers = {
+  headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+  },
+};
 
-//render(<Counter />, document.getElementById("main"));
-
+const api_links = {
+  BACKEND: "http://0.0.0.0:8000/",
+  FRONTEND: "http://localhost:1234"
+};
 
 const App = () => {
   const [info, setInfo] = useState([]);
-  
-  useEffect(() => {
-    
-      ( async () => {
-          //const link = api_links.BACKEND + '/' + '/aluno/exemplo';
-          //let value = null
-          /*try {
-              await axios.get(link,headers).then(response => { 
-                  value = response 
-                  let info = response
-                  console.log(info.data)
-                  setInfo(info.data)
-              });
-          } catch (error) {
-              console.log(error.response);
-          }*/
-        }
-      )
 
-  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(2);
+      const link = api_links.BACKEND + '/' + '/aluno/exemplo';
+      let value = null
+      try {
+        await axios.get(link,headers).then(response => { 
+            value = response 
+            let info = response
+            console.log(info.data)
+            setInfo(info.data)
+        });
+       } catch (error) {
+        console.log(error.response);
+      }
+    };
+  
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);;
+  }, [])
 
   return (
     <div>
@@ -60,5 +68,6 @@ const App2 = () => {
     <h1>Teste2</h1>
   )
 }; 
+
 
 render(<App />, document.getElementById("main"));
