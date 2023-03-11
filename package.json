@@ -1,11 +1,12 @@
 {
-  "name": "react-typescript",
+  "name": "frontend_website_template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,6 @@
     "@emotion/styled":"^11.10.6"
   },
   "devDependencies": {
-    "process": "^0.11.10"
+    "parcel": "latest"
   }
 }
