@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import { Button, Container, Divider, Grid, Header, Image, Menu, Segment } from 'semantic-ui-react'
 
 import Counter from "./Counter";
 import { exemplo_get } from "./actions/exemplo";
@@ -9,6 +10,8 @@ import { endpoints } from "./actions/server_core/endpoint";
 //import { api_links } from "./endpoint";
 //import { headers } from "./actions/server_core/endpoint";
 import { ApiGet } from "./actions/server_core/api_get";
+import AlunoCrud from "./AlunoCrud";
+
 
 const headers = {
   headers: {
@@ -28,7 +31,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       console.log(2);
-      const link = api_links.BACKEND + '/' + '/aluno/exemplo';
+      const link = api_links.BACKEND + 'student/get/all';
       let value = null
       try {
         await axios.get(link,headers).then(response => { 
@@ -53,13 +56,12 @@ const App = () => {
     <h1>As informações do aluno são:</h1>
 
       {info.map((aluno) => (
-          <h2>{aluno.name}</h2>
+          <h2>{aluno.cpf}</h2>
     ))}
     {info.map((aluno) => (
-        <h2>{aluno.curso}</h2>
+        <h2>{aluno.course}</h2>
     ))}
     </div>
-
   )
 };
 
@@ -69,5 +71,4 @@ const App2 = () => {
   )
 }; 
 
-
-render(<App />, document.getElementById("main"));
+render(<AlunoCrud />, document.getElementById("main"));
