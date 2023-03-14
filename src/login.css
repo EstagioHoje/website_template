@@ -1,0 +1,72 @@
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/logInBackground.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+    padding: calc(50vh - 216px);
+  }
+  
+  .popup {
+    width: fit-content;
+    background-color: var(--main-color);
+    border: 7px solid var(--main-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup > img {
+    padding: 15px;
+    height: 150px;
+  }
+  
+  .loginForm {
+    background-color: var(--neutral-color-2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .loginForm > p {
+    color: var(--main-color);
+    font-size: 20px;
+    font-family: var(--font);
+    margin-top: 15px;
+  }
+  
+  .loginForm > input {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px 15px;
+  }
+  
+  .loginForm > button {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-size: 18px;
+  }
+
+  .otherButtons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .otherButtons > button {
+    color: var(--neutral-color);
+    border: none;
+    background-color: var(--main-color);
+    font-size: 17px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
