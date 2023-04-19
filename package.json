@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "latest"
+    "parcel": "latest",
+    "process": "^0.11.10"
   }
 }
